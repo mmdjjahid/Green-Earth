@@ -90,7 +90,7 @@ const getSingleCategories = (categoriesId)=>{
 
 
 const getSinglePlants = (plantsId)=>{
-    PlantsLoadingAPI(true)
+    // PlantsLoadingAPI(true)
     fetch(`https://openapi.programming-hero.com/api/plant/${plantsId}`)
     .then(res => res.json()).then(SinglePlants => plantsModels(SinglePlants.plants))
 }
@@ -118,7 +118,7 @@ const plantsModels = (plantsId)=>{
     </div>
 
     `
-    PlantsLoadingAPI(false)
+    // PlantsLoadingAPI(false)
 }
 
 let count = 1

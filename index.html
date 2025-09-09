@@ -58,9 +58,18 @@
     </section>
 
     <!-- You can open the modal using ID.showModal() method -->
-
-
-
+<dialog id="plantsModels_Container" class="modal">
+            <div class="modal-box">
+                <form method="dialog">
+                <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                </form>
+                <div>
+                    <div id="model_Container">
+                        
+                    </div>
+                </div>
+            </div>
+        </dialog>
 
     <section class="my-28 mx-auto w-11/12 flex flex-col justify-center items-center ">
         <p class="font-semibold text-2xl text-gray-800 mb-10">Choose Your Trees</p>
@@ -97,8 +106,6 @@
             </div>
             
             
-            
-            
             <div class="md:col-span-2 bg-white p-3 rounded-2xl">
                 <p class="font-semibold text-base">Your Cart</p>
 
@@ -116,24 +123,10 @@
             </div>
         </div>
 
-        <dialog id="plantsModels_Container" class="modal">
-            <div class="modal-box">
-                <form method="dialog">
-                <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-                </form>
-                <div>
-                    <div id="model_Container">
-                        
-                    </div>
-                </div>
-            </div>
-        </dialog>
-
     </section>
 
 
      <!-- About Campaign -->
-
 
     <section class="my-28 mx-3 md:mx-33 flex flex-col justify-center items-center ">
         <p class="font-semibold text-2xl text-gray-800 mb-10">About the Campaign</p>
@@ -172,7 +165,6 @@
 
 <!-- Plant a Tree Today Section -->
 
-
     <section class="bg-[#166534] p-3 md:py-24 flex flex-col justify-center items-center">
         <p class="font-semibold text-2xl text-white mb-10">Plant a Tree Today</p>
 
@@ -191,15 +183,11 @@
     </section>
 
 
-
     <footer class="footer sm:footer-horizontal footer-center bg-[#14532D] text-base-content p-4 text-white">
         <aside>
             <p>© 2025 Green Earth. All Rights Reserved.</p>
         </aside>
     </footer>
-
-
-
 
     <script src="./script.js"></script>
 </body>
