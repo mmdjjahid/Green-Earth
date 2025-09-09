@@ -41,7 +41,8 @@ const displayPlants = (allPlants) => {
                 class="rounded-xl w-full h-32 object-cover" />
             </figure>
             <div class="card-body">
-                <h2 id='plantsModels_Container' onclick='getSinglePlants(${plantsData.id})' class="card-title text-sm">${plantsData.name}</h2>
+                <h2 id='plantsModels_Container' onclick='getSinglePlants(${plantsData.id})' class="plantApi_${plantsData.id} card-title text-sm">${plantsData.name} <span class="hidden loading loading-spinner loading-xl"></span>
+</h2>
                 <p class="text-[#1F293780] text-xs">${plantsData.description.substring(0, 98)}...</p>
                 
                 <div class=" flex justify-between items-center ">
@@ -91,11 +92,14 @@ const getSingleCategories = (categoriesId)=>{
 
 const getSinglePlants = (plantsId)=>{
     // PlantsLoadingAPI(true)
+    document.querySelector(`.plantApi_${plantsId}`).childNodes[1].classList.remove('hidden')
+
+
     fetch(`https://openapi.programming-hero.com/api/plant/${plantsId}`)
-    .then(res => res.json()).then(SinglePlants => plantsModels(SinglePlants.plants))
+    .then(res => res.json()).then(SinglePlants => plantsModels(SinglePlants.plants, plantsId))
 }
 
-const plantsModels = (plantsId)=>{
+const plantsModels = (plantsId, singlePlantsId)=>{
 
     document.getElementById('plantsModels_Container').showModal()
 
@@ -119,6 +123,7 @@ const plantsModels = (plantsId)=>{
 
     `
     // PlantsLoadingAPI(false)
+    document.querySelector(`.plantApi_${singlePlantsId}`).childNodes[1].classList.add('hidden')
 }
 
 let count = 1
